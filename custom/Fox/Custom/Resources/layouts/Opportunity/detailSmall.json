@@ -1,0 +1,30 @@
+[
+    {
+        "label": "",
+        "rows": [
+            [
+                {
+                    "name": "name",
+                    "fullWidth": true
+                }
+            ],
+            [
+                {
+                    "name": "account",
+                    "fullWidth": true
+                }
+            ],
+            [
+                {
+                    "name": "description"
+                }
+            ],
+            [
+                {
+                    "name": "selectTemplate"
+                },
+                false
+            ]
+        ]
+    }
+]

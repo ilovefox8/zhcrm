@@ -1,0 +1,11 @@
+{
+    "labels": {
+        "Create Cdr": "创建 通话记录"
+    },
+    "fields": {
+        "accounts": "Accounts"
+    },
+    "links": {
+        "accounts": "Accounts"
+    }
+}

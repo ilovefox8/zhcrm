@@ -1,0 +1,12 @@
+[
+    {
+        "label":"",
+        "rows": [
+            [{"name":"name"}],
+            [{"name":"userName"}],
+            [{"name":"teams"}, {"name":"isAdmin"}],
+            [{"name":"emailAddress"}],
+            [{"name":"phoneNumber"}]
+        ]
+    }
+]

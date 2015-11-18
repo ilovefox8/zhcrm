@@ -1,0 +1,18 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [{"name":"userName"}, false],
+            [{"name": "name"}, {"name": "title"}],
+            [{"name": "emailAddress"}, {"name": "phoneNumber"}]
+        ]
+    },
+    {
+        "label": "Teams and Access Control",
+        "rows": [
+            [{"name":"defaultTeam"}, {"name":"isActive"}],
+            [{"name":"teams"}, {"name":"isAdmin"}],
+            [{"name":"roles"}, false]
+        ]
+    }
+]

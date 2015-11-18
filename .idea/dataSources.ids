@@ -1,0 +1,1281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - zhcrm@localhost" uuid="ad8869cf-b8d6-48ea-9a93-00b0e3e9757d">
+    <database-info product="MySQL" version="5.5.42-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="zhcrm"/>
+    <table name="account" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="website" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="type" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="industry" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="sic_code" sqlType="VARCHAR" precision="40" scale="0" nullable="true" jdbcType="12"/>
+      <column name="billing_address_street" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="billing_address_city" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="billing_address_state" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="billing_address_country" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="billing_address_postal_code" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="shipping_address_street" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="shipping_address_city" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="shipping_address_state" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="shipping_address_country" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="shipping_address_postal_code" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="campaign_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="test" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="address_street" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_city" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_state" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_country" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_postal_code" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="billing_address" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_7D3656A499049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_7D3656A4ADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_7D3656A4B03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_7D3656A4F639F774" unique="false" columns="campaign_id"/>
+      <index name="IDX_ACCOUNT_ASSIGNED_USER" unique="false" columns="assigned_user_id,deleted"/>
+      <index name="IDX_ACCOUNT_NAME" unique="false" columns="name,deleted"/>
+    </table>
+    <table name="account_cdr" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="account_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cdr_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_4AB14B869B6B5FBAB2679EF" unique="true" columns="account_id,cdr_id"/>
+      <index name="IDX_4AB14B869B6B5FBA" unique="false" columns="account_id"/>
+      <index name="IDX_4AB14B86B2679EF" unique="false" columns="cdr_id"/>
+    </table>
+    <table name="account_contact" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="account_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="contact_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="role" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_8549F2709B6B5FBAE7A1254A" unique="true" columns="account_id,contact_id"/>
+      <index name="IDX_8549F2709B6B5FBA" unique="false" columns="account_id"/>
+      <index name="IDX_8549F270E7A1254A" unique="false" columns="contact_id"/>
+    </table>
+    <table name="account_document" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="account_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="document_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_A0A768C09B6B5FBAC33F7837" unique="true" columns="account_id,document_id"/>
+      <index name="IDX_A0A768C09B6B5FBA" unique="false" columns="account_id"/>
+      <index name="IDX_A0A768C0C33F7837" unique="false" columns="document_id"/>
+    </table>
+    <table name="account_target_list" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="account_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="target_list_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="opted_out" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_589712AA9B6B5FBAF6C6AFE0" unique="true" columns="account_id,target_list_id"/>
+      <index name="IDX_589712AA9B6B5FBA" unique="false" columns="account_id"/>
+      <index name="IDX_589712AAF6C6AFE0" unique="false" columns="target_list_id"/>
+    </table>
+    <table name="account_ticket" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="account_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ticket_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_B09463D09B6B5FBA700047D2" unique="true" columns="account_id,ticket_id"/>
+      <index name="IDX_B09463D0700047D2" unique="false" columns="ticket_id"/>
+      <index name="IDX_B09463D09B6B5FBA" unique="false" columns="account_id"/>
+    </table>
+    <table name="attachment" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="type" sqlType="VARCHAR" precision="36" scale="0" nullable="true" jdbcType="12"/>
+      <column name="size" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="role" sqlType="VARCHAR" precision="36" scale="0" nullable="true" jdbcType="12"/>
+      <column name="global" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="parent_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="parent_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_795FD9BBB03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_ATTACHMENT_PARENT" unique="false" columns="parent_type,parent_id"/>
+      <index name="parent" unique="false" columns="parent_id,parent_type"/>
+    </table>
+    <table name="auth_token" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="token" sqlType="VARCHAR" precision="36" scale="0" nullable="true" jdbcType="12"/>
+      <column name="hash" sqlType="VARCHAR" precision="150" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="VARCHAR" precision="36" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ip_address" sqlType="VARCHAR" precision="36" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_access" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_9315F04E5F37A13B" unique="false" columns="token"/>
+      <index name="IDX_9315F04EA76ED395" unique="false" columns="user_id"/>
+      <index name="IDX_9315F04ED1B862B8" unique="false" columns="hash"/>
+      <index name="IDX_AUTH_TOKEN_TOKEN" unique="false" columns="token,deleted"/>
+    </table>
+    <table name="autofollow" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="entity_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="entityType" unique="false" columns="entity_type"/>
+      <index name="IDX_EB89C717A76ED395" unique="false" columns="user_id"/>
+    </table>
+    <table name="call" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J1BsYW5uZWQn"/>
+      <column name="date_start" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="date_end" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="duration" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MzAw"/>
+      <column name="direction" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J091dGJvdW5kJw=="/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="parent_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="parent_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="account_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_CALL_ASSIGNED_USER" unique="false" columns="assigned_user_id,deleted"/>
+      <index name="IDX_CALL_ASSIGNED_USER_STATUS" unique="false" columns="assigned_user_id,status"/>
+      <index name="IDX_CALL_DATE_START" unique="false" columns="date_start,deleted"/>
+      <index name="IDX_CALL_DATE_START_STATUS" unique="false" columns="date_start,status"/>
+      <index name="IDX_CALL_STATUS" unique="false" columns="status,deleted"/>
+      <index name="IDX_CC8E2F3E99049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_CC8E2F3E9B6B5FBA" unique="false" columns="account_id"/>
+      <index name="IDX_CC8E2F3EADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_CC8E2F3EB03A8386" unique="false" columns="created_by_id"/>
+      <index name="parent" unique="false" columns="parent_id,parent_type"/>
+    </table>
+    <table name="call_contact" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="call_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="contact_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="36" scale="0" nullable="true" jdbcType="12" def="J05vbmUn"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_99C77F0D50A89B2CE7A1254A" unique="true" columns="call_id,contact_id"/>
+      <index name="IDX_99C77F0D50A89B2C" unique="false" columns="call_id"/>
+      <index name="IDX_99C77F0DE7A1254A" unique="false" columns="contact_id"/>
+    </table>
+    <table name="call_lead" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="call_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lead_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="36" scale="0" nullable="true" jdbcType="12" def="J05vbmUn"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_1F10069750A89B2C55458D" unique="true" columns="call_id,lead_id"/>
+      <index name="IDX_1F10069750A89B2C" unique="false" columns="call_id"/>
+      <index name="IDX_1F10069755458D" unique="false" columns="lead_id"/>
+    </table>
+    <table name="call_user" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="call_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="36" scale="0" nullable="true" jdbcType="12" def="J05vbmUn"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_BA12B115A76ED39550A89B2C" unique="true" columns="user_id,call_id"/>
+      <index name="IDX_BA12B11550A89B2C" unique="false" columns="call_id"/>
+      <index name="IDX_BA12B115A76ED395" unique="false" columns="user_id"/>
+    </table>
+    <table name="campaign" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J1BsYW5uaW5nJw=="/>
+      <column name="type" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="start_date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="end_date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="budget" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="budget_currency" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_1F1512DD99049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_1F1512DDADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_1F1512DDB03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_CAMPAIGN_CREATED_AT" unique="false" columns="created_at,deleted"/>
+    </table>
+    <table name="campaign_log_record" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="action" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="action_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="data" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="string_data" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="string_additional_data" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="application" sqlType="VARCHAR" precision="36" scale="0" nullable="true" jdbcType="12" def="J0ZveCc="/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="campaign_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="parent_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="parent_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="object_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="object_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="queue_item_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_49D9EC9BB03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_49D9EC9BF0EDC960" unique="false" columns="queue_item_id"/>
+      <index name="IDX_49D9EC9BF639F774" unique="false" columns="campaign_id"/>
+      <index name="IDX_CAMPAIGN_LOG_RECORD_ACTION" unique="false" columns="action,deleted"/>
+      <index name="IDX_CAMPAIGN_LOG_RECORD_ACTION_DATE" unique="false" columns="action_date,deleted"/>
+      <index name="object" unique="false" columns="object_id,object_type"/>
+      <index name="parent" unique="false" columns="parent_id,parent_type"/>
+    </table>
+    <table name="campaign_target_list" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="campaign_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="target_list_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_511AD253F639F774F6C6AFE0" unique="true" columns="campaign_id,target_list_id"/>
+      <index name="IDX_511AD253F639F774" unique="false" columns="campaign_id"/>
+      <index name="IDX_511AD253F6C6AFE0" unique="false" columns="target_list_id"/>
+    </table>
+    <table name="campaign_tracking_url" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="url" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="campaign_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_EEB6672399049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_EEB66723B03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_EEB66723F639F774" unique="false" columns="campaign_id"/>
+    </table>
+    <table name="case" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="number" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J05ldyc="/>
+      <column name="priority" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J05vcm1hbCc="/>
+      <column name="type" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="account_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="contact_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="inbound_email_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="number" unique="true" columns="number"/>
+      <index name="UNIQ_7808990496901F54" unique="true" columns="number"/>
+      <index name="IDX_7808990499049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_780899049B6B5FBA" unique="false" columns="account_id"/>
+      <index name="IDX_78089904ADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_78089904B03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_78089904E540AEA2" unique="false" columns="inbound_email_id"/>
+      <index name="IDX_78089904E7A1254A" unique="false" columns="contact_id"/>
+      <index name="IDX_CASE_ASSIGNED_USER" unique="false" columns="assigned_user_id,deleted"/>
+      <index name="IDX_CASE_ASSIGNED_USER_STATUS" unique="false" columns="assigned_user_id,status"/>
+      <index name="IDX_CASE_STATUS" unique="false" columns="status,deleted"/>
+    </table>
+    <table name="case_contact" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="case_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="contact_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_E3C11333CF10D4F5E7A1254A" unique="true" columns="case_id,contact_id"/>
+      <index name="IDX_E3C11333CF10D4F5" unique="false" columns="case_id"/>
+      <index name="IDX_E3C11333E7A1254A" unique="false" columns="contact_id"/>
+    </table>
+    <table name="cdr" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_A4A12D899049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_A4A12D8ADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_A4A12D8B03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_CDR_ASSIGNED_USER" unique="false" columns="assigned_user_id,deleted"/>
+      <index name="IDX_CDR_NAME" unique="false" columns="name,deleted"/>
+    </table>
+    <table name="contact" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="salutation_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="last_name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="account_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="do_not_call" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="address_street" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_city" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_state" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_country" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_postal_code" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="campaign_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_4C62E63899049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_4C62E6389B6B5FBA" unique="false" columns="account_id"/>
+      <index name="IDX_4C62E638ADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_4C62E638B03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_4C62E638F639F774" unique="false" columns="campaign_id"/>
+      <index name="IDX_CONTACT_ASSIGNED_USER" unique="false" columns="assigned_user_id,deleted"/>
+      <index name="IDX_CONTACT_FIRST_NAME" unique="false" columns="first_name,deleted"/>
+      <index name="IDX_CONTACT_NAME" unique="false" columns="first_name,last_name"/>
+    </table>
+    <table name="contact_meeting" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="contact_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="meeting_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="36" scale="0" nullable="true" jdbcType="12" def="J05vbmUn"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_6F3AC0B8E7A1254A67433D9C" unique="true" columns="contact_id,meeting_id"/>
+      <index name="IDX_6F3AC0B867433D9C" unique="false" columns="meeting_id"/>
+      <index name="IDX_6F3AC0B8E7A1254A" unique="false" columns="contact_id"/>
+    </table>
+    <table name="contact_opportunity" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="contact_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="opportunity_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="role" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_ED257C69E7A1254A9A34590F" unique="true" columns="contact_id,opportunity_id"/>
+      <index name="IDX_ED257C699A34590F" unique="false" columns="opportunity_id"/>
+      <index name="IDX_ED257C69E7A1254A" unique="false" columns="contact_id"/>
+    </table>
+    <table name="contact_target_list" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="contact_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="target_list_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="opted_out" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_E77C5117E7A1254AF6C6AFE0" unique="true" columns="contact_id,target_list_id"/>
+      <index name="IDX_E77C5117E7A1254A" unique="false" columns="contact_id"/>
+      <index name="IDX_E77C5117F6C6AFE0" unique="false" columns="target_list_id"/>
+    </table>
+    <table name="currency" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="rate" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="document" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="source" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J0ZveCc="/>
+      <column name="type" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="publish_date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="expiration_date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="folder_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="file_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_D8698A76162CB942" unique="false" columns="folder_id"/>
+      <index name="IDX_D8698A7693CB796C" unique="false" columns="file_id"/>
+      <index name="IDX_D8698A7699049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_D8698A76ADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_D8698A76B03A8386" unique="false" columns="created_by_id"/>
+    </table>
+    <table name="document_folder" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="parent_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_52C0B8AB727ACA70" unique="false" columns="parent_id"/>
+      <index name="IDX_52C0B8AB99049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_52C0B8ABB03A8386" unique="false" columns="created_by_id"/>
+    </table>
+    <table name="document_folder_path" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ascendor_id" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="descendor_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_90629A7011FE3B6C" unique="false" columns="ascendor_id"/>
+      <index name="IDX_90629A709A21681A" unique="false" columns="descendor_id"/>
+    </table>
+    <table name="document_opportunity" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="document_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="opportunity_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_120F4BDC33F78379A34590F" unique="true" columns="document_id,opportunity_id"/>
+      <index name="IDX_120F4BD9A34590F" unique="false" columns="opportunity_id"/>
+      <index name="IDX_120F4BDC33F7837" unique="false" columns="document_id"/>
+    </table>
+    <table name="email" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="from_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="from_string" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="reply_to_string" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="message_id" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="message_id_internal" sqlType="VARCHAR" precision="300" scale="0" nullable="true" jdbcType="12"/>
+      <column name="body_plain" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="body" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="is_html" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J0FyY2hpdmVkJw=="/>
+      <column name="has_attachment" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="date_sent" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="delivery_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="is_system" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="from_email_address_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="parent_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="parent_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="replied_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="account_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_E7927C743B57AF6F" unique="false" columns="message_id_internal"/>
+      <index name="IDX_E7927C7499049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_E7927C749B6B5FBA" unique="false" columns="account_id"/>
+      <index name="IDX_E7927C74ADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_E7927C74B03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_E7927C74B4E994E0" unique="false" columns="replied_id"/>
+      <index name="IDX_E7927C74D445573A" unique="false" columns="from_email_address_id"/>
+      <index name="IDX_EMAIL_DATE_SENT" unique="false" columns="date_sent,deleted"/>
+      <index name="IDX_EMAIL_DATE_SENT_ASSIGNED_USER" unique="false" columns="date_sent,assigned_user_id"/>
+      <index name="IDX_EMAIL_DATE_SENT_STATUS" unique="false" columns="date_sent,status,deleted"/>
+      <index name="parent" unique="false" columns="parent_id,parent_type"/>
+    </table>
+    <table name="email_account" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="email_address" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="host" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="port" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="JzE0Myc="/>
+      <column name="ssl" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="monitored_folders" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J0lOQk9YJw=="/>
+      <column name="sent_folder" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="store_sent_emails" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="keep_fetched_emails_unread" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="fetch_since" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="fetch_data" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_C0F63E6B99049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_C0F63E6BADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_C0F63E6BB03A8386" unique="false" columns="created_by_id"/>
+    </table>
+    <table name="email_address" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="lower" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="invalid" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="opt_out" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_B08E074EE9A7B23" unique="false" columns="lower"/>
+    </table>
+    <table name="email_email_address" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="email_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email_address_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_type" sqlType="VARCHAR" precision="4" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_42B914E6A832C1C959045DAAF19287C2" unique="true" columns="email_id,email_address_id,address_type"/>
+      <index name="IDX_42B914E659045DAA" unique="false" columns="email_address_id"/>
+      <index name="IDX_42B914E6A832C1C9" unique="false" columns="email_id"/>
+    </table>
+    <table name="email_filter" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="from" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="to" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="subject" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="body_contains" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="parent_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="parent_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_25E8CED99049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_25E8CEDB03A8386" unique="false" columns="created_by_id"/>
+      <index name="parent" unique="false" columns="parent_id,parent_type"/>
+    </table>
+    <table name="email_queue_item" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="attempt_count" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="sent_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="email_address" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="is_test" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="mass_email_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="target_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="target_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_16F89F37EF1946AB" unique="false" columns="mass_email_id"/>
+      <index name="target" unique="false" columns="target_id,target_type"/>
+    </table>
+    <table name="email_template" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="subject" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="body" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="is_html" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_9C0600CA99049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_9C0600CAADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_9C0600CAB03A8386" unique="false" columns="created_by_id"/>
+    </table>
+    <table name="email_user" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="email_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="is_read" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="is_important" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_12A5F6CCA832C1C9A76ED395" unique="true" columns="email_id,user_id"/>
+      <index name="IDX_12A5F6CCA76ED395" unique="false" columns="user_id"/>
+      <index name="IDX_12A5F6CCA832C1C9" unique="false" columns="email_id"/>
+    </table>
+    <table name="entity_email_address" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="entity_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email_address_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="entity_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="primary" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_9125AB4281257D5D59045DAAC412EE02" unique="true" columns="entity_id,email_address_id,entity_type"/>
+      <index name="IDX_9125AB4259045DAA" unique="false" columns="email_address_id"/>
+      <index name="IDX_9125AB4281257D5D" unique="false" columns="entity_id"/>
+    </table>
+    <table name="entity_phone_number" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="entity_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone_number_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="entity_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="primary" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_7459056F81257D5D39DFD528C412EE02" unique="true" columns="entity_id,phone_number_id,entity_type"/>
+      <index name="IDX_7459056F39DFD528" unique="false" columns="phone_number_id"/>
+      <index name="IDX_7459056F81257D5D" unique="false" columns="entity_id"/>
+    </table>
+    <table name="entity_team" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="entity_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="team_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="entity_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_8C2C1F3481257D5D296CD8AEC412EE02" unique="true" columns="entity_id,team_id,entity_type"/>
+      <index name="IDX_8C2C1F34296CD8AE" unique="false" columns="team_id"/>
+      <index name="IDX_8C2C1F3481257D5D" unique="false" columns="entity_id"/>
+    </table>
+    <table name="extension" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="version" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="file_list" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="is_installed" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_9FB73D77B03A8386" unique="false" columns="created_by_id"/>
+    </table>
+    <table name="external_account" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="data" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="enabled" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="import" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="entity_type" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="file_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_9D4ECE1D93CB796C" unique="false" columns="file_id"/>
+      <index name="IDX_9D4ECE1DB03A8386" unique="false" columns="created_by_id"/>
+    </table>
+    <table name="import_entity" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="entity_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="entity_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="import_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="is_imported" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="is_updated" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="is_duplicate" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="entity" unique="false" columns="entity_id,entity_type"/>
+      <index name="IDX_7219FE70B6A263D9" unique="false" columns="import_id"/>
+      <index name="IDX_IMPORT_ENTITY_ENTITY_IMPORT" unique="false" columns="import_id,entity_type"/>
+    </table>
+    <table name="inbound_email" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="email_address" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="host" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="port" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="JzE0Myc="/>
+      <column name="ssl" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="monitored_folders" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J0lOQk9YJw=="/>
+      <column name="fetch_data" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="create_case" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="case_distribution" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J0RpcmVjdC1Bc3NpZ25tZW50Jw=="/>
+      <column name="target_user_position" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="reply" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="reply_from_address" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="reply_to_address" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="reply_from_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="assign_to_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="team_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="reply_email_template_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_B3E13488296CD8AE" unique="false" columns="team_id"/>
+      <index name="IDX_B3E134885AE5A3F7" unique="false" columns="reply_email_template_id"/>
+      <index name="IDX_B3E134886D716643" unique="false" columns="assign_to_user_id"/>
+      <index name="IDX_B3E1348899049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_B3E13488B03A8386" unique="false" columns="created_by_id"/>
+    </table>
+    <table name="integration" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="data" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="enabled" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="job" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J1BlbmRpbmcn"/>
+      <column name="execute_time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="service_name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="method" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="data" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="attempts" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="failed_attempts" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="scheduled_job_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_FBD8E0F8A71ECAB0" unique="false" columns="scheduled_job_id"/>
+      <index name="IDX_JOB_EXECUTE_TIME" unique="false" columns="status,execute_time"/>
+      <index name="IDX_JOB_STATUS" unique="false" columns="status,deleted"/>
+    </table>
+    <table name="lead" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="salutation_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="last_name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="title" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J05ldyc="/>
+      <column name="source" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="opportunity_amount" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="website" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_street" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_city" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_state" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_country" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_postal_code" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="do_not_call" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="account_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="opportunity_amount_currency" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="campaign_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_account_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_contact_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_opportunity_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_289161CB3AEF561B" unique="false" columns="created_account_id"/>
+      <index name="IDX_289161CB46252CEB" unique="false" columns="created_contact_id"/>
+      <index name="IDX_289161CB99049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_289161CB9E0CD2D1" unique="false" columns="created_opportunity_id"/>
+      <index name="IDX_289161CBADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_289161CBB03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_289161CBF639F774" unique="false" columns="campaign_id"/>
+      <index name="IDX_LEAD_ASSIGNED_USER" unique="false" columns="assigned_user_id,deleted"/>
+      <index name="IDX_LEAD_ASSIGNED_USER_STATUS" unique="false" columns="assigned_user_id,status"/>
+      <index name="IDX_LEAD_CREATED_AT" unique="false" columns="created_at,deleted"/>
+      <index name="IDX_LEAD_CREATED_AT_STATUS" unique="false" columns="created_at,status"/>
+      <index name="IDX_LEAD_FIRST_NAME" unique="false" columns="first_name,deleted"/>
+      <index name="IDX_LEAD_NAME" unique="false" columns="first_name,last_name"/>
+      <index name="IDX_LEAD_STATUS" unique="false" columns="status,deleted"/>
+    </table>
+    <table name="lead_meeting" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="lead_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="meeting_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="36" scale="0" nullable="true" jdbcType="12" def="J05vbmUn"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_ACDBBD5755458D67433D9C" unique="true" columns="lead_id,meeting_id"/>
+      <index name="IDX_ACDBBD5755458D" unique="false" columns="lead_id"/>
+      <index name="IDX_ACDBBD5767433D9C" unique="false" columns="meeting_id"/>
+    </table>
+    <table name="lead_target_list" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="lead_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="target_list_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="opted_out" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_7041AADD55458DF6C6AFE0" unique="true" columns="lead_id,target_list_id"/>
+      <index name="IDX_7041AADD55458D" unique="false" columns="lead_id"/>
+      <index name="IDX_7041AADDF6C6AFE0" unique="false" columns="target_list_id"/>
+    </table>
+    <table name="mass_email" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J1BlbmRpbmcn"/>
+      <column name="store_sent_emails" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="from_address" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="from_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="reply_to_address" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="reply_to_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="start_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="email_template_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="campaign_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="inbound_email_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_AFBC1FDF131A730F" unique="false" columns="email_template_id"/>
+      <index name="IDX_AFBC1FDF99049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_AFBC1FDFB03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_AFBC1FDFE540AEA2" unique="false" columns="inbound_email_id"/>
+      <index name="IDX_AFBC1FDFF639F774" unique="false" columns="campaign_id"/>
+    </table>
+    <table name="mass_email_target_list" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="mass_email_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="target_list_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_6B9CE04DEF1946ABF6C6AFE0" unique="true" columns="mass_email_id,target_list_id"/>
+      <index name="IDX_6B9CE04DEF1946AB" unique="false" columns="mass_email_id"/>
+      <index name="IDX_6B9CE04DF6C6AFE0" unique="false" columns="target_list_id"/>
+    </table>
+    <table name="meeting" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J1BsYW5uZWQn"/>
+      <column name="date_start" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="date_end" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="duration" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MzYwMA=="/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="parent_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="parent_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="account_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_F515E13999049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_F515E1399B6B5FBA" unique="false" columns="account_id"/>
+      <index name="IDX_F515E139ADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_F515E139B03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_MEETING_ASSIGNED_USER" unique="false" columns="assigned_user_id,deleted"/>
+      <index name="IDX_MEETING_ASSIGNED_USER_STATUS" unique="false" columns="assigned_user_id,status"/>
+      <index name="IDX_MEETING_DATE_START" unique="false" columns="date_start,deleted"/>
+      <index name="IDX_MEETING_DATE_START_STATUS" unique="false" columns="date_start,status"/>
+      <index name="IDX_MEETING_STATUS" unique="false" columns="status,deleted"/>
+      <index name="parent" unique="false" columns="parent_id,parent_type"/>
+    </table>
+    <table name="meeting_user" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="meeting_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="36" scale="0" nullable="true" jdbcType="12" def="J05vbmUn"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_61622E9BA76ED39567433D9C" unique="true" columns="user_id,meeting_id"/>
+      <index name="IDX_61622E9B67433D9C" unique="false" columns="meeting_id"/>
+      <index name="IDX_61622E9BA76ED395" unique="false" columns="user_id"/>
+    </table>
+    <table name="note" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="post" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="data" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="type" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="number" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="parent_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="parent_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="related_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="related_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="super_parent_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="super_parent_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="number" unique="true" columns="number"/>
+      <index name="UNIQ_CFBDFA1496901F54" unique="true" columns="number"/>
+      <index name="IDX_CFBDFA1499049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_CFBDFA14B03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_NOTE_CREATED_AT" unique="false" columns="created_at"/>
+      <index name="IDX_NOTE_PARENT_AND_SUPER_PARENT" unique="false" columns="parent_id,parent_type,super_parent_id,super_parent_type"/>
+      <index name="parent" unique="false" columns="parent_id,parent_type"/>
+      <index name="related" unique="false" columns="related_id,related_type"/>
+      <index name="superParent" unique="false" columns="super_parent_id,super_parent_type"/>
+    </table>
+    <table name="notification" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="number" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="data" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="type" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="read" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="message" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="number" unique="true" columns="number"/>
+      <index name="UNIQ_BF5476CA96901F54" unique="true" columns="number"/>
+      <index name="IDX_BF5476CAA76ED395" unique="false" columns="user_id"/>
+      <index name="IDX_NOTIFICATION_CREATED_AT" unique="false" columns="created_at"/>
+      <index name="IDX_NOTIFICATION_USER" unique="false" columns="user_id,created_at"/>
+    </table>
+    <table name="opportunity" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="amount" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="stage" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J1Byb3NwZWN0aW5nJw=="/>
+      <column name="probability" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="lead_source" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="close_date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="amount_currency" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="account_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="campaign_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="is_template" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_8389C3D799049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_8389C3D79B6B5FBA" unique="false" columns="account_id"/>
+      <index name="IDX_8389C3D7ADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_8389C3D7B03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_8389C3D7F639F774" unique="false" columns="campaign_id"/>
+      <index name="IDX_OPPORTUNITY_ASSIGNED_USER" unique="false" columns="assigned_user_id,deleted"/>
+      <index name="IDX_OPPORTUNITY_ASSIGNED_USER_STAGE" unique="false" columns="assigned_user_id,stage"/>
+      <index name="IDX_OPPORTUNITY_CREATED_AT" unique="false" columns="created_at,deleted"/>
+      <index name="IDX_OPPORTUNITY_CREATED_AT_STAGE" unique="false" columns="created_at,stage"/>
+      <index name="IDX_OPPORTUNITY_STAGE" unique="false" columns="stage,deleted"/>
+    </table>
+    <table name="password_change_request" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="request_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_AC3A261F427EB8A5" unique="false" columns="request_id"/>
+      <index name="IDX_AC3A261FA76ED395" unique="false" columns="user_id"/>
+    </table>
+    <table name="phone_number" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="36" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="type" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_6B01BC5B5E237E06" unique="false" columns="name"/>
+    </table>
+    <table name="preferences" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="time_zone" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="date_format" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J01NL0REL1lZWVkn"/>
+      <column name="time_format" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J0hIOm1tJw=="/>
+      <column name="week_start" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="thousand_separator" sqlType="VARCHAR" precision="1" scale="0" nullable="true" jdbcType="12" def="Jywn"/>
+      <column name="decimal_mark" sqlType="VARCHAR" precision="1" scale="0" nullable="true" jdbcType="12" def="Jy4n"/>
+      <column name="default_currency" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J1VTRCc="/>
+      <column name="dashboard_layout" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="dashlet_options" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="preset_filters" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="smtp_server" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="smtp_port" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MjU="/>
+      <column name="smtp_auth" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="smtp_security" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="smtp_username" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="smtp_password" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="language" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J2VuX1VTJw=="/>
+      <column name="export_delimiter" sqlType="VARCHAR" precision="1" scale="0" nullable="true" jdbcType="12" def="Jywn"/>
+      <column name="receive_assignment_email_notifications" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
+      <column name="signature" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="default_reminders" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="theme" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="use_custom_tab_list" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="tab_list" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="reminder" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="remind_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="start_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="type" sqlType="VARCHAR" precision="36" scale="0" nullable="true" jdbcType="12" def="J1BvcHVwJw=="/>
+      <column name="seconds" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="entity_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="entity_id" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_40374F408CDE5729" unique="false" columns="type"/>
+      <index name="IDX_40374F40B75363F7" unique="false" columns="start_at"/>
+      <index name="IDX_40374F40BBE50DA3" unique="false" columns="remind_at"/>
+    </table>
+    <table name="role" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="150" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="assignment_permission" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J25vdC1zZXQn"/>
+      <column name="user_permission" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J25vdC1zZXQn"/>
+      <column name="data" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="role_team" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="role_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="team_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_7A5FD48BD60322AC296CD8AE" unique="true" columns="role_id,team_id"/>
+      <index name="IDX_7A5FD48B296CD8AE" unique="false" columns="team_id"/>
+      <index name="IDX_7A5FD48BD60322AC" unique="false" columns="role_id"/>
+    </table>
+    <table name="role_user" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="role_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_332CA4DDD60322ACA76ED395" unique="true" columns="role_id,user_id"/>
+      <index name="IDX_332CA4DDA76ED395" unique="false" columns="user_id"/>
+      <index name="IDX_332CA4DDD60322AC" unique="false" columns="role_id"/>
+    </table>
+    <table name="scheduled_job" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="job" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="scheduling" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="JyovMTAgKiAqICogKic="/>
+      <column name="last_run" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_800A50CE99049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_800A50CEB03A8386" unique="false" columns="created_by_id"/>
+    </table>
+    <table name="scheduled_job_log_record" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="execution_time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="scheduled_job_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_615BB231A71ECAB0" unique="false" columns="scheduled_job_id"/>
+    </table>
+    <table name="subscription" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="entity_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="entity_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="entity" unique="false" columns="entity_id,entity_type"/>
+      <index name="IDX_A3C664D3A76ED395" unique="false" columns="user_id"/>
+    </table>
+    <table name="target" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="salutation_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="last_name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="title" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="account_name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="website" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_street" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_city" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_state" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_country" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_postal_code" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="do_not_call" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_466F2FFC99049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_466F2FFCADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_466F2FFCB03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_TARGET_ASSIGNED_USER" unique="false" columns="assigned_user_id,deleted"/>
+      <index name="IDX_TARGET_FIRST_NAME" unique="false" columns="first_name,deleted"/>
+      <index name="IDX_TARGET_NAME" unique="false" columns="first_name,last_name"/>
+    </table>
+    <table name="target_list" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="campaigns_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="campaigns" unique="false" columns="campaigns_id"/>
+      <index name="IDX_89D0EEA999049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_89D0EEA9ADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_89D0EEA9B03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_TARGET_LIST_CREATED_AT" unique="false" columns="created_at,deleted"/>
+    </table>
+    <table name="target_list_user" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="target_list_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="opted_out" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_FCE97B8CA76ED395F6C6AFE0" unique="true" columns="user_id,target_list_id"/>
+      <index name="IDX_FCE97B8CA76ED395" unique="false" columns="user_id"/>
+      <index name="IDX_FCE97B8CF6C6AFE0" unique="false" columns="target_list_id"/>
+    </table>
+    <table name="task" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J05vdCBTdGFydGVkJw=="/>
+      <column name="priority" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J05vcm1hbCc="/>
+      <column name="date_start" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="date_end" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="date_start_date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="date_end_date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="date_completed" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="parent_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="parent_type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="account_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_527EDB2599049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_527EDB259B6B5FBA" unique="false" columns="account_id"/>
+      <index name="IDX_527EDB25ADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_527EDB25B03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_TASK_ASSIGNED_USER" unique="false" columns="assigned_user_id,deleted"/>
+      <index name="IDX_TASK_ASSIGNED_USER_STATUS" unique="false" columns="assigned_user_id,status"/>
+      <index name="IDX_TASK_DATE_END_STATUS" unique="false" columns="date_end,status"/>
+      <index name="IDX_TASK_DATE_START" unique="false" columns="date_start,deleted"/>
+      <index name="IDX_TASK_DATE_START_STATUS" unique="false" columns="date_start,status"/>
+      <index name="IDX_TASK_STATUS" unique="false" columns="status,deleted"/>
+      <index name="parent" unique="false" columns="parent_id,parent_type"/>
+    </table>
+    <table name="team" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="position_list" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="team_user" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="team_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="role" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_5C722232296CD8AEA76ED395" unique="true" columns="team_id,user_id"/>
+      <index name="IDX_5C722232296CD8AE" unique="false" columns="team_id"/>
+      <index name="IDX_5C722232A76ED395" unique="false" columns="user_id"/>
+    </table>
+    <table name="template" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="body" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="header" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="footer" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="entity_type" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="left_margin" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8" def="MTA="/>
+      <column name="right_margin" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8" def="MTA="/>
+      <column name="top_margin" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8" def="MTA="/>
+      <column name="bottom_margin" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8" def="MjU="/>
+      <column name="print_footer" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="footer_position" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8" def="MTU="/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_97601F8399049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_97601F83B03A8386" unique="false" columns="created_by_id"/>
+    </table>
+    <table name="ticket" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="modified_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modified_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="assigned_user_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_97A0ADA399049ECE" unique="false" columns="modified_by_id"/>
+      <index name="IDX_97A0ADA3ADF66B1A" unique="false" columns="assigned_user_id"/>
+      <index name="IDX_97A0ADA3B03A8386" unique="false" columns="created_by_id"/>
+      <index name="IDX_TICKET_ASSIGNED_USER" unique="false" columns="assigned_user_id,deleted"/>
+      <index name="IDX_TICKET_NAME" unique="false" columns="name,deleted"/>
+    </table>
+    <table name="unique_id" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="data" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="created_by_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_E3C683435E237E06" unique="false" columns="name"/>
+      <index name="IDX_E3C68343B03A8386" unique="false" columns="created_by_id"/>
+    </table>
+    <table name="user" schema="" catalog="zhcrm" type="TABLE">
+      <column name="id" sqlType="VARCHAR" precision="24" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="is_admin" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="user_name" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="150" scale="0" nullable="true" jdbcType="12"/>
+      <column name="salutation_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="last_name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="is_active" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
+      <column name="is_super_admin" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="title" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="default_team_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="avatar_id" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="IDX_8D93D64986383B10" unique="false" columns="avatar_id"/>
+      <index name="IDX_8D93D649DBE989EB" unique="false" columns="default_team_id"/>
+    </table>
+  </data-source>
+  <data-source name="MySQL - vosdb@121.43.103.143" uuid="088afade-1d7a-4b9c-a6ea-f8bd7f099085">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

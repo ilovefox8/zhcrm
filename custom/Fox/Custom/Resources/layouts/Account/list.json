@@ -1,0 +1,24 @@
+[
+    {
+        "name": "name",
+        "width": 30,
+        "link": true
+    },
+    {
+        "name": "website",
+        "notSortable": true
+    },
+    {
+        "name": "phoneNumber",
+        "notSortable": true
+    },
+    {
+        "name": "createdAt"
+    },
+    {
+        "name": "address"
+    },
+    {
+        "name": "assignedUser"
+    }
+]

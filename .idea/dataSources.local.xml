@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - zhcrm@localhost" uuid="ad8869cf-b8d6-48ea-9a93-00b0e3e9757d">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>zhcrm.*</schema-pattern>
+      <default-schemas>zhcrm.*</default-schemas>
+    </data-source>
+    <data-source name="MySQL - vosdb@121.43.103.143" uuid="088afade-1d7a-4b9c-a6ea-f8bd7f099085">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>vosdb.*</schema-pattern>
+      <default-schemas>vosdb.*</default-schemas>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,75 @@
+{
+    "id": "1",
+    "timeZone": "Asia\/Shanghai",
+    "dateFormat": "YYYY-MM-DD",
+    "timeFormat": "HH:mm",
+    "weekStart": 1,
+    "thousandSeparator": ",",
+    "decimalMark": ".",
+    "defaultCurrency": "USD",
+    "dashboardLayout": [
+        {
+            "name": "My Fox",
+            "layout": [
+                [
+                    {
+                        "name": "SalesPipeline",
+                        "id": "d840769"
+                    },
+                    {
+                        "name": "Calls",
+                        "id": "d885395"
+                    }
+                ],
+                [
+                    {
+                        "name": "Calendar",
+                        "id": "d725746"
+                    },
+                    {
+                        "name": "Tasks",
+                        "id": "defaultTasks"
+                    }
+                ]
+            ]
+        }
+    ],
+    "dashletOptions": {},
+    "presetFilters": {
+        "Account": [
+            {
+                "id": "f172859",
+                "name": "f172859",
+                "label": "test",
+                "data": {
+                    "createdAt": {
+                        "type": "lastSevenDays",
+                        "dateTime": true
+                    },
+                    "industry": {
+                        "type": "in",
+                        "value": [
+                            "Manufacturing"
+                        ]
+                    },
+                    "assignedUser": false
+                },
+                "primary": null
+            }
+        ]
+    },
+    "smtpServer": "",
+    "smtpPort": 25,
+    "smtpAuth": false,
+    "smtpSecurity": "",
+    "language": "en_US",
+    "exportDelimiter": ";",
+    "receiveAssignmentEmailNotifications": true,
+    "signature": "",
+    "defaultReminders": [],
+    "theme": "FoxVertical",
+    "useCustomTabList": false,
+    "tabList": [
+        "Account"
+    ]
+}
