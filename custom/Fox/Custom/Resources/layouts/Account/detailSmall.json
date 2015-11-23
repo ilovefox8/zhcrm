@@ -5,30 +5,32 @@
             [
                 {
                     "name": "name"
-                }
-            ],
-            [
-                {
-                    "name": "website"
-                }
-            ],
-            [
-                {
-                    "name": "emailAddress"
-                }
-            ],
-            [
+                },
                 {
                     "name": "phoneNumber"
-                }
-            ],
-            [
+                },
                 {
                     "name": "type"
                 },
                 {
                     "name": "industry"
                 }
+            ],
+            [
+                {
+                    "name": "description",
+                    "fullWidth": 4
+                }
+            ],
+            [
+                {
+                    "name": "website"
+                },
+                false,
+                {
+                    "name": "emailAddress"
+                },
+                false
             ]
         ]
     }

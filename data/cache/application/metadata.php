@@ -328,6 +328,12 @@ return array (
         'exportsTo' => '$',
         'exportsAs' => 'cropper',
       ),
+      'socket-io' => 
+      array (
+        'path' => 'client/lib/socket.io.js',
+        'exportsTo' => '$',
+        'exportsAs' => 'io',
+      ),
       'full-calendar' => 
       array (
         'path' => 'client/modules/crm/lib/fullcalendar.min.js',

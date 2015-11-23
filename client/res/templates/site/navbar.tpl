@@ -62,7 +62,7 @@
                     <span class="full-label"><i class="fa fa-wrench"></i> 设置中心 <i class="fa fa-angle-left pull-right"></i></span><span class="short-label" title="设置中心"><i class="fa fa-wrench"></i></span>
                 </a>
                 <ul id="configMeun" class="nav nav-list collapse menu-second">
-                    <li><a href="#User/view/1"><i class="fa fa-circle-o"></i>  个人设置</a></li>
+                    <li><a href="#User/view/{{userId}}"><i class="fa fa-circle-o"></i>  个人设置</a></li>
                     <li><a href="#Admin"><i class="fa fa-circle-o"></i>  系统设置</a></li>
                     <li><a href="#"><i class="fa fa-circle-o"></i>  客户回收</a></li>
                     <li><a href="#"><i class="fa fa-circle-o"></i>  订单配置</a></li>

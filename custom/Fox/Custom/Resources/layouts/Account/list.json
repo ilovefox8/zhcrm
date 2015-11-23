@@ -1,24 +1,29 @@
 [
     {
         "name": "name",
-        "width": 30,
-        "link": true
+        "link": true,
+        "align": "left"
     },
     {
         "name": "website",
-        "notSortable": true
+        "notSortable": true,
+        "align": "left"
     },
     {
         "name": "phoneNumber",
-        "notSortable": true
+        "notSortable": true,
+        "align": "left"
     },
     {
-        "name": "createdAt"
+        "name": "createdAt",
+        "align": "left"
     },
     {
-        "name": "address"
+        "name": "address",
+        "align": "left"
     },
     {
-        "name": "assignedUser"
+        "name": "assignedUser",
+        "align": "left"
     }
 ]

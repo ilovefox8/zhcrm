@@ -3,11 +3,12 @@ Fox.define('Views.Admin.Layouts.List', 'Views.Admin.Layouts.Rows', function (Dep
 
     return Dep.extend({
 
-        dataAttributes: ['name', 'width', 'link', 'notSortable', 'align'],
+        dataAttributes: ['name', 'width', 'widthPx', 'link', 'notSortable', 'align'],
 
         dataAttributesDefs: {
             link: {type: 'bool'},
             width: {type: 'float'},
+            widthPx: {type: 'int'},
             notSortable: {type: 'bool'},
             align: {
                 type: 'enum',

@@ -15,7 +15,7 @@ Fox.define('Views.Modals.Detail', 'Views.Modal', function (Dep) {
 
         detailViewName: null,
 
-        columnCount: 2,
+        columnCount: 4,
 
         backdrop: false,
 

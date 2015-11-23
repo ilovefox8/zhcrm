@@ -15,7 +15,7 @@ Fox.define('Views.Modals.Edit', 'Views.Modal', function (Dep) {
 
         editViewName: null,
 
-        columnCount: 2,
+        columnCount: 4,
 
         escapeDisabled: true,
 

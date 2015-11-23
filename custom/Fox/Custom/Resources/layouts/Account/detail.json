@@ -56,7 +56,9 @@
                     "name": "billingAddress",
                     "fullWidth": 2
                 },
-                false
+                {
+                    "name": "campaign"
+                }
             ]
         ]
     }

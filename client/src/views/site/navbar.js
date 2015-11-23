@@ -1,5 +1,5 @@
 
-Fox.define('Views.Site.Navbar', 'View', function (Dep) {
+Fox.define('Views.Site.Navbar', ['View', 'lib!socket-io'], function (Dep) {
 
     return Dep.extend({
 
@@ -67,6 +67,13 @@ Fox.define('Views.Site.Navbar', 'View', function (Dep) {
         },
 
         setup: function () {
+
+            var socket = io('http://localhost:3000');
+
+            socket.on('click action', function(msg){
+                console.log(msg);
+            });
+
             this.getRouter().on('routed', function (e) {
                 if (e.controller) {
                     this.selectTab(e.controller);

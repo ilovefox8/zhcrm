@@ -23,6 +23,21 @@ class Cc extends \Fox\Core\Controllers\Base
             'auth' => ['ilovefox8', 'a199000000']
         ]);*/
 
+        //return $request->get('src');
+        return $request->get('dst');
+
+        $res = $client->request('GET', 'http://218.244.133.9:81/agc/api.php?function=version');
+
+        return $res->getBody();
+    }
+
+    public function actionChangeExtenStatus($params, $data, $request)
+    {
+        $client = new GuzzleHttp\Client();
+        /*$res = $client->request('GET', 'http://218.244.133.9:81/agc/api.php?function=version', [
+            'auth' => ['ilovefox8', 'a199000000']
+        ]);*/
+
         $res = $client->request('GET', 'http://218.244.133.9:81/agc/api.php?function=version');
 
         return $res->getBody();

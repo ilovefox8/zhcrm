@@ -1,6 +1,6 @@
 <?php
 return array (
-  'cacheTimestamp' => 1447839625,
+  'cacheTimestamp' => 1448002172,
   'database' => 
   array (
     'driver' => 'pdo_mysql',
