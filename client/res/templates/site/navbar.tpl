@@ -29,10 +29,10 @@
                     <span class="full-label"><i class="fa fa-fax"></i> 话务中心 <i class="fa fa-angle-left pull-right"></i></span><span class="short-label" title="话务中心"><i class="fa fa-fax"></i></span>
                 </a>
                 <ul id="ccMenu" class="nav nav-list collapse menu-second">
-                    <li><a href="#"><i class="fa fa-circle-o"></i>  座席状态</a></li>
+                    <li><a href="#Cc/agentStatus"><i class="fa fa-circle-o"></i>  座席状态</a></li>
                     <li><a href="#"><i class="fa fa-circle-o"></i>  队列状态</a></li>
                     <li><a href="#"><i class="fa fa-circle-o"></i>  实时报表</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>  分机管理</a></li>
+                    <li><a href="#Agent"><i class="fa fa-circle-o"></i>  分机管理</a></li>
                 </ul>
             </li>
             <li>
@@ -93,12 +93,10 @@
                 </ul>
             </li>
             <li>
-                <a href="#msgMenu" class="nav-header menu-first collapsed nav-link" data-toggle="collapse">
-                    <span class="full-label"><i class="fa fa-bar-chart"></i> 报表 <i class="fa fa-angle-left pull-right"></i></span><span class="short-label" title="报表"><i class="fa fa-bar-chart"></i></span>
+                <a href="#Cdr" class="nav-header menu-first nav-link">
+                    <span class="full-label"><i class="fa fa-bar-chart"></i> 报表 </i></span><span class="short-label" title="报表"><i class="fa fa-bar-chart"></i></span>
                 </a>
-                <ul id="msgMenu" class="nav nav-list collapse menu-second">
 
-                </ul>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">

@@ -1,6 +1,6 @@
 <?php
 return array (
-  'cacheTimestamp' => 1448002172,
+  'cacheTimestamp' => 1448954641,
   'database' => 
   array (
     'driver' => 'pdo_mysql',
@@ -88,6 +88,7 @@ return array (
     12 => 'Case',
     13 => 'Contact',
     14 => 'Meeting',
+    15 => 'Agent',
   ),
   'quickCreateList' => 
   array (

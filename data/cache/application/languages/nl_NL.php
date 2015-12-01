@@ -506,6 +506,7 @@ text* - starts with text,
       'Ticket' => '工单',
       'Cdr' => '通话记录',
       'Track' => '客户追踪模板',
+      'Agent' => '分机',
     ),
     'scopeNamesPlural' => 
     array (
@@ -544,6 +545,7 @@ text* - starts with text,
       'Ticket' => '工单',
       'Cdr' => '通话记录',
       'Track' => '客户追踪模板',
+      'Agent' => '分机',
     ),
     'labels' => 
     array (
@@ -1701,12 +1703,15 @@ no - can assign only to self',
       'newPasswordConfirm' => 'Nieuwe Wachtwoord Bevestigen',
       'avatar' => 'Avatar',
       'isActive' => '是否激活',
+      'agent' => '分机号',
+      'agents' => '分机',
     ),
     'links' => 
     array (
       'teams' => 'Groepen',
       'roles' => 'Functies',
       'targetLists' => 'Target Lists',
+      'agents' => '分机',
     ),
     'labels' => 
     array (
@@ -2601,6 +2606,33 @@ Wachtwoord: {password}
       'overdue' => 'Laat',
     ),
   ),
+  'Agent' => 
+  array (
+    'labels' => 
+    array (
+      'Create Agent' => '创建 分机',
+    ),
+    'fields' => 
+    array (
+      'status' => '状态',
+      'user' => '用户',
+      'is_login' => 'is_login',
+      'is_assigned' => 'is_assigned',
+    ),
+    'options' => 
+    array (
+      'status' => 
+      array (
+        '_empty_' => '',
+        'Break' => 'Break',
+        'Available' => 'Available',
+      ),
+    ),
+    'links' => 
+    array (
+      'user' => '用户',
+    ),
+  ),
   'Cdr' => 
   array (
     'labels' => 
@@ -2610,10 +2642,34 @@ Wachtwoord: {password}
     'fields' => 
     array (
       'accounts' => 'Accounts',
+      'src' => '主叫',
+      'dst' => '被叫',
+      'ringTime' => '振铃时间',
+      'uniqueid' => 'uniqueid',
+      'listid' => 'listid',
+      'campaignid' => 'campaignid',
+      'status' => '状态',
+      'phoneNumber' => '电话号码',
+      'agent' => 'agent',
+      'dropType' => '挂机方',
+      'group' => '技能组',
+      'answeredtime' => '通话时长',
+      'dialtime' => '拨打时长',
+      'starttime' => '开始时间',
+      'endtime' => '结束时间',
+      'type' => '进/出线',
     ),
     'links' => 
     array (
       'accounts' => 'Accounts',
+    ),
+    'options' => 
+    array (
+      'type' => 
+      array (
+        'in' => '进线',
+        'out' => '出线',
+      ),
     ),
   ),
   'Ticket' => 

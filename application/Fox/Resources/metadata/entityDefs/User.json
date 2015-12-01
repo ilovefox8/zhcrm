@@ -98,6 +98,9 @@
         "createdAt": {
             "type": "datetime",
             "readOnly": true
+        },
+        "agent": {
+            "type": "link"
         }
     },
     "links": {
@@ -140,6 +143,11 @@
         "emails": {
             "type": "hasMany",
             "entity": "Email",
+            "foreign": "users"
+        },
+        "agent": {
+            "type": "belongsTo",
+            "entity": "Agent",
             "foreign": "users"
         }
     },

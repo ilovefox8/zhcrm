@@ -58,6 +58,7 @@ Fox.define('controllers/record', 'controller', function (Dep) {
             }
 
             this.getCollection(function (collection) {
+                console.log(collection);
                 this.main(this.getViewName('list'), {
                     scope: this.name,
                     collection: collection

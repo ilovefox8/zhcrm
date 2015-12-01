@@ -34,6 +34,7 @@ return array (
   'Target' => '\\Fox\\Modules\\Crm\\Services\\Target',
   'TargetList' => '\\Fox\\Modules\\Crm\\Services\\TargetList',
   'Task' => '\\Fox\\Modules\\Crm\\Services\\Task',
+  'Agent' => '\\Fox\\Custom\\Services\\Agent',
   'Cdr' => '\\Fox\\Custom\\Services\\Cdr',
   'Ticket' => '\\Fox\\Custom\\Services\\Ticket',
   'Track' => '\\Fox\\Custom\\Services\\Track',

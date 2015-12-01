@@ -1858,6 +1858,14 @@ return array (
         0 => 'onlyMy',
       ),
     ),
+    'Agent' => 
+    array (
+      'controller' => 'Controllers.Record',
+      'boolFilterList' => 
+      array (
+        0 => 'onlyMy',
+      ),
+    ),
     'Cdr' => 
     array (
       'controller' => 'Controllers.Record',
@@ -5269,6 +5277,10 @@ return array (
           'type' => 'datetime',
           'readOnly' => true,
         ),
+        'agent' => 
+        array (
+          'type' => 'link',
+        ),
       ),
       'links' => 
       array (
@@ -5320,6 +5332,12 @@ return array (
         array (
           'type' => 'hasMany',
           'entity' => 'Email',
+          'foreign' => 'users',
+        ),
+        'agent' => 
+        array (
+          'type' => 'belongsTo',
+          'entity' => 'Agent',
           'foreign' => 'users',
         ),
         'targetLists' => 
@@ -8967,6 +8985,124 @@ return array (
         ),
       ),
     ),
+    'Agent' => 
+    array (
+      'fields' => 
+      array (
+        'name' => 
+        array (
+          'type' => 'varchar',
+          'required' => true,
+        ),
+        'description' => 
+        array (
+          'type' => 'text',
+        ),
+        'createdAt' => 
+        array (
+          'type' => 'datetime',
+          'readOnly' => true,
+        ),
+        'modifiedAt' => 
+        array (
+          'type' => 'datetime',
+          'readOnly' => true,
+        ),
+        'createdBy' => 
+        array (
+          'type' => 'link',
+          'readOnly' => true,
+        ),
+        'modifiedBy' => 
+        array (
+          'type' => 'link',
+          'readOnly' => true,
+        ),
+        'assignedUser' => 
+        array (
+          'type' => 'link',
+          'required' => true,
+        ),
+        'teams' => 
+        array (
+          'type' => 'linkMultiple',
+        ),
+        'status' => 
+        array (
+          'type' => 'enum',
+          'required' => false,
+          'options' => 
+          array (
+            0 => '',
+            1 => 'Break',
+            2 => 'Available',
+          ),
+          'isSorted' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'user' => 
+        array (
+          'type' => 'link',
+        ),
+      ),
+      'links' => 
+      array (
+        'createdBy' => 
+        array (
+          'type' => 'belongsTo',
+          'entity' => 'User',
+        ),
+        'modifiedBy' => 
+        array (
+          'type' => 'belongsTo',
+          'entity' => 'User',
+        ),
+        'assignedUser' => 
+        array (
+          'type' => 'belongsTo',
+          'entity' => 'User',
+        ),
+        'teams' => 
+        array (
+          'type' => 'hasMany',
+          'entity' => 'Team',
+          'relationName' => 'EntityTeam',
+          'layoutRelationshipsDisabled' => true,
+        ),
+        'user' => 
+        array (
+          'type' => 'belongsTo',
+          'foreign' => 'agents',
+          'entity' => 'User',
+          'isCustom' => true,
+        ),
+      ),
+      'collection' => 
+      array (
+        'sortBy' => 'createdAt',
+        'asc' => false,
+      ),
+      'indexes' => 
+      array (
+        'name' => 
+        array (
+          'columns' => 
+          array (
+            0 => 'name',
+            1 => 'deleted',
+          ),
+        ),
+        'assignedUser' => 
+        array (
+          'columns' => 
+          array (
+            0 => 'assignedUserId',
+            1 => 'deleted',
+          ),
+        ),
+      ),
+    ),
     'Cdr' => 
     array (
       'fields' => 
@@ -9008,6 +9144,137 @@ return array (
         'teams' => 
         array (
           'type' => 'linkMultiple',
+        ),
+        'src' => 
+        array (
+          'type' => 'varchar',
+          'required' => false,
+          'trim' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'dst' => 
+        array (
+          'type' => 'varchar',
+          'required' => false,
+          'trim' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'ringTime' => 
+        array (
+          'type' => 'varchar',
+          'required' => false,
+          'trim' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'uniqueid' => 
+        array (
+          'type' => 'varchar',
+          'required' => false,
+          'trim' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'listid' => 
+        array (
+          'type' => 'varchar',
+          'required' => false,
+          'trim' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'campaignid' => 
+        array (
+          'type' => 'varchar',
+          'required' => false,
+          'trim' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'status' => 
+        array (
+          'type' => 'varchar',
+          'required' => false,
+          'trim' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'phoneNumber' => 
+        array (
+          'type' => 'varchar',
+          'required' => false,
+          'trim' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'agent' => 
+        array (
+          'type' => 'varchar',
+          'required' => false,
+          'trim' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'dropType' => 
+        array (
+          'type' => 'varchar',
+          'required' => false,
+          'trim' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'group' => 
+        array (
+          'type' => 'varchar',
+          'required' => false,
+          'trim' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'answeredtime' => 
+        array (
+          'type' => 'int',
+          'required' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'dialtime' => 
+        array (
+          'type' => 'int',
+          'required' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'starttime' => 
+        array (
+          'notNull' => false,
+          'type' => 'datetime',
+          'required' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'endtime' => 
+        array (
+          'notNull' => false,
+          'type' => 'datetime',
+          'required' => false,
+          'audited' => false,
+          'isCustom' => true,
+        ),
+        'type' => 
+        array (
+          'type' => 'enum',
+          'required' => false,
+          'isSorted' => false,
+          'audited' => false,
+          'isCustom' => true,
+          'options' => 
+          array (
+            0 => 'in',
+            1 => 'out',
+          ),
         ),
       ),
       'links' => 
@@ -10804,6 +11071,21 @@ return array (
       'importable' => true,
       'notifications' => true,
       'object' => true,
+    ),
+    'Agent' => 
+    array (
+      'entity' => true,
+      'layouts' => true,
+      'tab' => true,
+      'acl' => true,
+      'customizable' => true,
+      'importable' => true,
+      'notifications' => true,
+      'stream' => false,
+      'type' => 'Base',
+      'module' => 'Custom',
+      'object' => true,
+      'isCustom' => true,
     ),
     'Cdr' => 
     array (

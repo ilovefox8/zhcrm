@@ -3778,6 +3778,21 @@ return array (
         'type' => 'varchar',
         'notStorable' => true,
       ),
+      'agentId' => 
+      array (
+        'dbType' => 'varchar',
+        'len' => 24,
+        'type' => 'foreignId',
+        'index' => true,
+        'notNull' => false,
+      ),
+      'agentName' => 
+      array (
+        'type' => 'foreign',
+        'notStorable' => false,
+        'relation' => 'agent',
+        'foreign' => 'name',
+      ),
       'targetListsIds' => 
       array (
         'type' => 'varchar',
@@ -3911,6 +3926,13 @@ return array (
             'type' => 'bool',
           ),
         ),
+      ),
+      'agent' => 
+      array (
+        'type' => 'belongsTo',
+        'entity' => 'Agent',
+        'key' => 'agentId',
+        'foreignKey' => 'id',
       ),
       'emails' => 
       array (
@@ -10161,6 +10183,210 @@ return array (
       ),
     ),
   ),
+  'Agent' => 
+  array (
+    'fields' => 
+    array (
+      'id' => 
+      array (
+        'dbType' => 'varchar',
+        'len' => 24,
+        'type' => 'id',
+      ),
+      'name' => 
+      array (
+        'type' => 'varchar',
+        'len' => 255,
+      ),
+      'deleted' => 
+      array (
+        'type' => 'bool',
+        'default' => false,
+      ),
+      'description' => 
+      array (
+        'type' => 'text',
+      ),
+      'createdAt' => 
+      array (
+        'type' => 'datetime',
+        'notNull' => false,
+      ),
+      'modifiedAt' => 
+      array (
+        'type' => 'datetime',
+        'notNull' => false,
+      ),
+      'status' => 
+      array (
+        'type' => 'varchar',
+        'len' => 255,
+      ),
+      'createdById' => 
+      array (
+        'dbType' => 'varchar',
+        'len' => 24,
+        'type' => 'foreignId',
+        'index' => true,
+        'notNull' => false,
+      ),
+      'createdByName' => 
+      array (
+        'type' => 'foreign',
+        'notStorable' => false,
+        'relation' => 'createdBy',
+        'foreign' => 
+        array (
+          0 => 'firstName',
+          1 => ' ',
+          2 => 'lastName',
+        ),
+      ),
+      'modifiedById' => 
+      array (
+        'dbType' => 'varchar',
+        'len' => 24,
+        'type' => 'foreignId',
+        'index' => true,
+        'notNull' => false,
+      ),
+      'modifiedByName' => 
+      array (
+        'type' => 'foreign',
+        'notStorable' => false,
+        'relation' => 'modifiedBy',
+        'foreign' => 
+        array (
+          0 => 'firstName',
+          1 => ' ',
+          2 => 'lastName',
+        ),
+      ),
+      'assignedUserId' => 
+      array (
+        'dbType' => 'varchar',
+        'len' => 24,
+        'type' => 'foreignId',
+        'index' => true,
+        'notNull' => false,
+      ),
+      'assignedUserName' => 
+      array (
+        'type' => 'foreign',
+        'notStorable' => false,
+        'relation' => 'assignedUser',
+        'foreign' => 
+        array (
+          0 => 'firstName',
+          1 => ' ',
+          2 => 'lastName',
+        ),
+      ),
+      'teamsIds' => 
+      array (
+        'type' => 'varchar',
+        'notStorable' => true,
+      ),
+      'teamsNames' => 
+      array (
+        'type' => 'varchar',
+        'notStorable' => true,
+      ),
+      'userId' => 
+      array (
+        'dbType' => 'varchar',
+        'len' => 24,
+        'type' => 'foreignId',
+        'index' => true,
+        'notNull' => false,
+      ),
+      'userName' => 
+      array (
+        'type' => 'foreign',
+        'notStorable' => false,
+        'relation' => 'user',
+        'foreign' => 
+        array (
+          0 => 'firstName',
+          1 => ' ',
+          2 => 'lastName',
+        ),
+      ),
+    ),
+    'relations' => 
+    array (
+      'user' => 
+      array (
+        'type' => 'belongsTo',
+        'entity' => 'User',
+        'key' => 'userId',
+        'foreignKey' => 'id',
+      ),
+      'teams' => 
+      array (
+        'type' => 'manyMany',
+        'entity' => 'Team',
+        'relationName' => 'EntityTeam',
+        'midKeys' => 
+        array (
+          0 => 'entity_id',
+          1 => 'team_id',
+        ),
+        'conditions' => 
+        array (
+          'entityType' => 'Agent',
+        ),
+        'additionalColumns' => 
+        array (
+          'entityType' => 
+          array (
+            'type' => 'varchar',
+            'len' => 100,
+          ),
+        ),
+      ),
+      'assignedUser' => 
+      array (
+        'type' => 'belongsTo',
+        'entity' => 'User',
+        'key' => 'assignedUserId',
+        'foreignKey' => 'id',
+      ),
+      'modifiedBy' => 
+      array (
+        'type' => 'belongsTo',
+        'entity' => 'User',
+        'key' => 'modifiedById',
+        'foreignKey' => 'id',
+      ),
+      'createdBy' => 
+      array (
+        'type' => 'belongsTo',
+        'entity' => 'User',
+        'key' => 'createdById',
+        'foreignKey' => 'id',
+      ),
+    ),
+    'indexes' => 
+    array (
+      'name' => 
+      array (
+        'columns' => 
+        array (
+          0 => 'name',
+          1 => 'deleted',
+        ),
+      ),
+      'assignedUser' => 
+      array (
+        'columns' => 
+        array (
+          0 => 'assignedUserId',
+          1 => 'deleted',
+        ),
+      ),
+    ),
+  ),
   'Cdr' => 
   array (
     'fields' => 
@@ -10194,6 +10420,86 @@ return array (
       array (
         'type' => 'datetime',
         'notNull' => false,
+      ),
+      'src' => 
+      array (
+        'type' => 'varchar',
+        'len' => 255,
+      ),
+      'dst' => 
+      array (
+        'type' => 'varchar',
+        'len' => 255,
+      ),
+      'ringTime' => 
+      array (
+        'type' => 'varchar',
+        'len' => 255,
+      ),
+      'uniqueid' => 
+      array (
+        'type' => 'varchar',
+        'len' => 255,
+      ),
+      'listid' => 
+      array (
+        'type' => 'varchar',
+        'len' => 255,
+      ),
+      'campaignid' => 
+      array (
+        'type' => 'varchar',
+        'len' => 255,
+      ),
+      'status' => 
+      array (
+        'type' => 'varchar',
+        'len' => 255,
+      ),
+      'phoneNumber' => 
+      array (
+        'type' => 'varchar',
+        'len' => 255,
+      ),
+      'agent' => 
+      array (
+        'type' => 'varchar',
+        'len' => 255,
+      ),
+      'dropType' => 
+      array (
+        'type' => 'varchar',
+        'len' => 255,
+      ),
+      'group' => 
+      array (
+        'type' => 'varchar',
+        'len' => 255,
+      ),
+      'answeredtime' => 
+      array (
+        'type' => 'int',
+        'len' => 11,
+      ),
+      'dialtime' => 
+      array (
+        'type' => 'int',
+        'len' => 11,
+      ),
+      'starttime' => 
+      array (
+        'type' => 'datetime',
+        'notNull' => false,
+      ),
+      'endtime' => 
+      array (
+        'type' => 'datetime',
+        'notNull' => false,
+      ),
+      'type' => 
+      array (
+        'type' => 'varchar',
+        'len' => 255,
       ),
       'createdById' => 
       array (

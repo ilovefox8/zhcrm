@@ -14,7 +14,8 @@
         "newPassword": "新密码",
         "newPasswordConfirm": "确认新密码",
         "avatar": "头像",
-        "isActive": "是否激活"
+        "isActive": "是否激活",
+        "agent": "分机号"
     },
     "links": {
         "teams": "团队",

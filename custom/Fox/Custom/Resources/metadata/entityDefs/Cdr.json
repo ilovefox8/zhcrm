@@ -29,6 +29,120 @@
         },
         "teams": {
             "type": "linkMultiple"
+        },
+        "src": {
+            "type": "varchar",
+            "required": false,
+            "trim": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "dst": {
+            "type": "varchar",
+            "required": false,
+            "trim": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "ringTime": {
+            "type": "varchar",
+            "required": false,
+            "trim": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "uniqueid": {
+            "type": "varchar",
+            "required": false,
+            "trim": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "listid": {
+            "type": "varchar",
+            "required": false,
+            "trim": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "campaignid": {
+            "type": "varchar",
+            "required": false,
+            "trim": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "status": {
+            "type": "varchar",
+            "required": false,
+            "trim": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "phoneNumber": {
+            "type": "varchar",
+            "required": false,
+            "trim": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "agent": {
+            "type": "varchar",
+            "required": false,
+            "trim": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "dropType": {
+            "type": "varchar",
+            "required": false,
+            "trim": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "group": {
+            "type": "varchar",
+            "required": false,
+            "trim": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "answeredtime": {
+            "type": "int",
+            "required": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "dialtime": {
+            "type": "int",
+            "required": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "starttime": {
+            "notNull": false,
+            "type": "datetime",
+            "required": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "endtime": {
+            "notNull": false,
+            "type": "datetime",
+            "required": false,
+            "audited": false,
+            "isCustom": true
+        },
+        "type": {
+            "type": "enum",
+            "required": false,
+            "isSorted": false,
+            "audited": false,
+            "isCustom": true,
+            "options": [
+                "in",
+                "out"
+            ]
         }
     },
     "links": {

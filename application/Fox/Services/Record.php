@@ -124,6 +124,29 @@ class Record extends \Fox\Core\Services\Base
 
     }
 
+    public function getEntityByPhone($phoneNumber){
+        $pdo = $this->getEntityManager()->getPDO();
+    }
+
+    public function getEntityByName($name){
+        $pdo = $this->getEntityManager()->getPDO();
+
+        $sql = "
+            SELECT id FROM ".strtolower($this->entityName)." WHERE name = ".$pdo->quote($name)."
+        ";
+        $sth = $pdo->prepare($sql);
+        $sth->execute();
+        $rows = $sth->fetchAll();
+        $ids = array();
+        foreach ($rows as $row) {
+            $id = $row['id'];
+
+            $ids[] = $id;
+        }
+
+        return $ids;
+    }
+
     public function getEntity($id = null)
     {
         $entity = $this->getRepository()->get($id);

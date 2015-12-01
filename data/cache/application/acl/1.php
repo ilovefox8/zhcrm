@@ -93,6 +93,12 @@
       'edit' => 'all',
       'delete' => 'no',
     ),
+    'Agent' => 
+    array (
+      'read' => 'all',
+      'edit' => 'all',
+      'delete' => 'no',
+    ),
     'Cdr' => 
     array (
       'read' => 'all',

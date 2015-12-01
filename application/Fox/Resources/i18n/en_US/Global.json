@@ -210,8 +210,8 @@
     },
     "fields": {
         "name": "姓名",
-        "firstName": "名字",
-        "lastName": "姓",
+        "firstName": "姓",
+        "lastName": "名字",
         "salutationName": "称呼",
         "assignedUser": "负责人",
         "emailAddress": "邮箱",
