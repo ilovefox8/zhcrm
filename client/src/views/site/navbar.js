@@ -15,6 +15,7 @@ Fox.define('Views.Site.Navbar', ['View', 'lib!socket-io'], function (Dep) {
                 quickCreateList: this.quickCreateList,
                 enableQuickCreate: this.quickCreateList.length > 0,
                 userName: this.getUser().get('name'),
+                agent: this.getUser().get('agentName'),
                 userId: this.getUser().id,
                 logoSrc: this.getLogoSrc()
             };
@@ -68,10 +69,17 @@ Fox.define('Views.Site.Navbar', ['View', 'lib!socket-io'], function (Dep) {
 
         setup: function () {
 
-            var socket = io('http://localhost:3000');
+            var self = this;
 
-            socket.on('click action', function(msg){
-                console.log(msg);
+            self.socket = io('http://192.168.33.10:3000');
+            self.agent = this.getUser().get('agentName');
+
+            self.socket.emit('login', self.agent);
+            self.socket.on('popupOnCall'+self.agent, function(data){
+                self.actionSelectPhoneNumber(data);
+            });
+            self.socket.on('changeExtenStatus'+self.agent, function(data){
+                console.log(data);
             });
 
             this.getRouter().on('routed', function (e) {
@@ -112,6 +120,47 @@ Fox.define('Views.Site.Navbar', ['View', 'lib!socket-io'], function (Dep) {
                 $(window).off('resize.navbar');
                 $(window).off('scroll.navbar');
             });
+        },
+
+        actionSelectPhoneNumber : function(data){
+            var self = this;
+            $.ajax({
+                    url: "Cc/action/getAccountByPhone?dst="+data.dst,
+                    type: "GET",
+                    dataType: 'json',
+                })
+                .done(function(ajaxData){
+                    if (typeof(ajaxData) != 'undefined' ) {
+                        self.popupView(ajaxData);
+                    } else {
+                        alert('error');
+                    }
+                });
+        },
+
+        popupView: function(data){
+            this.notify('Loading...');
+            this.createView('quickEdit', 'Modals.Edit', {
+                scope: data.scope,
+                id: data.id,
+                phone: data.phone,
+                fullFormDisabled: false
+            }, function (view) {
+                view.once('after:render', function () {
+                    Fox.Ui.notify(false);
+                    //this.dialog.hide();
+                }, this);
+
+                this.listenToOnce(view, 'remove', function () {
+                    //this.close();
+                }, this);
+
+                this.listenToOnce(view, 'after:save', function () {
+                    //this.trigger('after:save');
+                }, this);
+
+                view.render();
+            }.bind(this));
         },
 
         adjust: function () {

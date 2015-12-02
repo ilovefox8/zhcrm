@@ -7,6 +7,7 @@ Fox.define('Views.Fields.DatetimeShort', 'Views.Fields.Datetime', function (Dep)
 
             if (this.mode == 'list' || this.mode == 'detail') {
                 var value = this.model.get(this.name)
+                return value;
                 if (value) {
                     var string;
 

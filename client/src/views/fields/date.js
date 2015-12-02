@@ -37,7 +37,7 @@ Fox.define('Views.Fields.Date', 'Views.Fields.Base', function (Dep) {
                 }
                 return this.translate('None');
             }
-
+            return value;
             if (this.mode == 'list' || this.mode == 'detail') {
                 var d = moment.utc(value, this.getDateTime().internalDateFormat);
 

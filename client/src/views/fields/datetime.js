@@ -37,10 +37,10 @@ Fox.define('Views.Fields.Datetime', 'Views.Fields.Date', function (Dep) {
                 }
                 return this.translate('None');
             }
-
+            return value;
             if (this.mode == 'list' || this.mode == 'detail') {
                 var d = this.getDateTime().toMoment(value);
-                var now = moment().tz(this.getDateTime().timeZone || 'UTC');
+                var now = moment().tz(this.getDateTime().timeZone || 'UTC');console.log(now);
                 var dt = now.clone().startOf('day');
 
                 var ranges = {

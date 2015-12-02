@@ -107,7 +107,7 @@
             </li>
             <li class="nav navbar-nav callcenter-status-container">
                 <div class="input-group has-feedback">
-                    分机号:<strong>1000</strong>
+                    分机号:<strong>{{agent}}</strong>
                 </div>
             </li>
 

@@ -58,18 +58,20 @@ Fox.define('Views.Modals.Edit', 'Views.Modal', function (Dep) {
 
             if (!this.id) {
                 this.header = this.getLanguage().translate('Create ' + this.scope, 'labels', this.scope);
+                this.header += ' % ' + this.options.phone + ' % ';
             } else {
                 this.header = this.getLanguage().translate('Edit');
                 this.header += ': ' + this.getLanguage().translate(this.scope, 'scopeNames');
+                this.header += ' % ' + this.options.phone + ' % ';
             }
 
-            if (!this.fullFormDisabled) {
+            /*if (!this.fullFormDisabled) {
                 if (!this.id) {
                     this.header = '<a href="#' + this.scope + '/create" class="action" title="'+this.translate('Full Form')+'" data-action="fullForm">' + this.header + '</a>';
                 } else {
                     this.header = '<a href="#' + this.scope + '/edit/' + this.id+'" class="action" title="'+this.translate('Full Form')+'" data-action="fullForm">' + this.header + '</a>';
                 }
-            }
+            }*/
 
             this.sourceModel = this.model;
 
@@ -95,13 +97,14 @@ Fox.define('Views.Modals.Edit', 'Views.Modal', function (Dep) {
                     if (this.options.attributes) {
                         model.set(this.options.attributes);
                     }
+                    model.set('phoneNumber', this.options.phone);
                     this.createEdit(model);
                 }
             }.bind(this));
         },
 
         createEdit: function (model, callback) {
-            var viewName = this.editViewName || this.getMetadata().get('clientDefs.' + model.name + '.recordViews.editQuick') || 'Record.EditSmall'; 
+            var viewName = this.editViewName || this.getMetadata().get('clientDefs.' + model.name + '.recordViews.editQuick') || 'Record.EditSmall';
             var options = {
                 model: model,
                 el: this.containerSelector + ' .edit-container',

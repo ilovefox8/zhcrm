@@ -1,0 +1,71 @@
+[2015-12-02 15:56:43] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 15:56:43] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 15:56:47] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 15:56:47] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 15:56:54] Fox.ERROR: API [GET]:/:controller/:id, Params:Array
+(
+    [controller] => Account
+    [id] => 564ebc9b2dfd840da
+)
+, InputData:  -  [] []
+[2015-12-02 15:56:54] Fox.ERROR: Display Error: , Code: 403 URL: /api/v1/Account/564ebc9b2dfd840da [] []
+[2015-12-02 15:57:04] Fox.ERROR: API [GET]:/:controller/:id, Params:Array
+(
+    [controller] => Account
+    [id] => 564ebc9b2dfd840da
+)
+, InputData:  -  [] []
+[2015-12-02 15:57:04] Fox.ERROR: Display Error: , Code: 403 URL: /api/v1/Account/564ebc9b2dfd840da [] []
+[2015-12-02 15:59:35] Fox.ERROR: API [GET]:/:controller/:id, Params:Array
+(
+    [controller] => Account
+    [id] => 564ebc9b2dfd840da
+)
+, InputData:  -  [] []
+[2015-12-02 15:59:35] Fox.ERROR: Display Error: , Code: 403 URL: /api/v1/Account/564ebc9b2dfd840da [] []
+[2015-12-02 15:59:49] Fox.ERROR: API [GET]:/:controller/:id, Params:Array
+(
+    [controller] => Account
+    [id] => 564ebc9b2dfd840da
+)
+, InputData:  -  [] []
+[2015-12-02 15:59:49] Fox.ERROR: Display Error: , Code: 403 URL: /api/v1/Account/564ebc9b2dfd840da [] []
+[2015-12-02 16:04:52] Fox.ERROR: API [GET]:/:controller/:id, Params:Array
+(
+    [controller] => Account
+    [id] => 564ebc9b2dfd840da
+)
+, InputData:  -  [] []
+[2015-12-02 16:04:52] Fox.ERROR: Display Error: , Code: 403 URL: /api/v1/Account/564ebc9b2dfd840da [] []
+[2015-12-02 16:37:13] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:37:13] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:37:24] Fox.ERROR: API [GET]:/Activities/:scope/:id/:name, Params:Array
+(
+    [scope] => User
+    [id] => 1
+    [name] => activities
+)
+, InputData:  -  [] []
+[2015-12-02 16:37:24] Fox.ERROR: Display Error: , Code: 403 URL: /api/v1/Activities/User/1/activities?maxSize=5&offset=0&sortBy=dateStart&asc=false&where%5B%5D=false [] []
+[2015-12-02 16:37:24] Fox.ERROR: API [GET]:/Activities/:scope/:id/:name, Params:Array
+(
+    [scope] => User
+    [id] => 1
+    [name] => history
+)
+, InputData:  -  [] []
+[2015-12-02 16:37:24] Fox.ERROR: Display Error: , Code: 403 URL: /api/v1/Activities/User/1/history?maxSize=5&offset=0&sortBy=dateStart&asc=false&where%5B%5D=false [] []
+[2015-12-02 16:37:29] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:37:29] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:37:34] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:37:34] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:37:44] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:37:44] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:37:47] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:37:47] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:45:54] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:45:54] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:45:58] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:45:58] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:46:28] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
+[2015-12-02 16:46:28] Fox.WARNING: E_WARNING: Illegal offset type in isset or empty {"file":"/home/wwwroot/zhcrm/application/Fox/ORM/DB/Query/Base.php","line":305} []
